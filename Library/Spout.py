@@ -56,7 +56,8 @@ class Spout() :
         #window setup
         pygame.init() 
         pygame.display.set_caption( 'Spout For Python' )
-        pygame.display.set_mode( self.display, DOUBLEBUF|OPENGL )
+	pygame.display.set_mode(self.display, DOUBLEBUF|OPENGL, 32)
+        # pygame.display.set_mode( self.display, DOUBLEBUF|OPENGL )
 
         # OpenGL init
         glMatrixMode( GL_PROJECTION )
