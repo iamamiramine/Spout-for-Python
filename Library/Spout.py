@@ -12,7 +12,6 @@ from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GL.framebufferobjects import *
 from OpenGL.GLU import *
-import os
 
 class Spout() :
     """
@@ -54,22 +53,10 @@ class Spout() :
         self.senderDataType = [None] * self.n_send
         self.senderName = [None] * self.n_send
 
-        # Set SDL to use EGL
-        os.environ['SDL_VIDEODRIVER'] = 'x11'
-        
-        # Initialize PyGame
-        pygame.init()
-        
-        # Try to initialize display with OpenGL
-        try:
-            pygame.display.set_mode(self.display, DOUBLEBUF|OPENGL)
-        except pygame.error:
-            # Fallback for headless environment
-            os.environ['SDL_VIDEODRIVER'] = 'dummy'
-            pygame.display.init()
-            pygame.display.set_mode(self.display, DOUBLEBUF|OPENGL)
-
-        pygame.display.set_caption('Spout For Python')
+        #window setup
+        pygame.init() 
+        pygame.display.set_caption( 'Spout For Python' )
+        pygame.display.set_mode( self.display, DOUBLEBUF|OPENGL )
 
         # OpenGL init
         glMatrixMode( GL_PROJECTION )
