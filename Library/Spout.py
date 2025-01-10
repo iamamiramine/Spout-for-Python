@@ -53,10 +53,10 @@ class Spout() :
         self.senderDataType = [None] * self.n_send
         self.senderName = [None] * self.n_send
 
-        #window setup
-        pygame.init() 
-        pygame.display.set_caption( 'Spout For Python' )
-        pygame.display.set_mode( self.display, DOUBLEBUF|OPENGL, 32 )
+        # # window setup
+        # pygame.init() 
+        # pygame.display.set_caption( 'Spout For Python' )
+        # pygame.display.set_mode( self.display, DOUBLEBUF|OPENGL, 32 )
 
         # OpenGL init
         glMatrixMode( GL_PROJECTION )
